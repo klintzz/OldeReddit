@@ -2,25 +2,28 @@
     "name": "Olde Reddit",
     "version": "0.1",
     "description": "Automatically forward to old.reddit.com",
-    "permissions": ["storage", "declarativeContent", "activeTab"],
-    "background":  {
-        "scripts": ["background.js"],
-        "persistent": false
+    "permissions": ["storage",
+                    "declarativeNetRequest"],
+    "declarative_net_request": {
+        "rule_resources" : [
+            {
+                "id": "redirect_rule",
+                "enabled": true,
+                "path": "redirect_rule.json"
+            }
+        ]
     },
-    "page_action": {
-        "default_popup": "popup.html",
-        "default_icon": {
-            "16": "img/icon_red_16.png",
-            "32": "img/icon_red_32.png",
-            "48": "img/icon_red_48.png",
-            "128": "img/icon_red_128.png"
-        }
-    },
+    "permissions": [
+        "declarativeNetRequest"
+    ],
+    "host_permissions": [
+        "*://*.reddit.com/*"
+    ],
     "icons": {
         "16": "img/icon_red_16.png",
         "32": "img/icon_red_32.png",
         "48": "img/icon_red_48.png",
         "128": "img/icon_red_128.png"
     },
-    "manifest_version": 2
+    "manifest_version": 3
 }
