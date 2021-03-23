@@ -2,8 +2,7 @@
     "name": "Olde Reddit",
     "version": "0.1",
     "description": "Automatically forward to old.reddit.com",
-    "permissions": ["storage",
-                    "declarativeNetRequest"],
+    "permissions": ["declarativeNetRequest"],
     "declarative_net_request": {
         "rule_resources" : [
             {
